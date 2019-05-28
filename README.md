@@ -22,8 +22,20 @@ Below picture shows the architectural details of the CNN used to solve this prob
 # Training
 
 ## Data Augmentation
-Gaussian blur is applied on the 129 images using scipy python module. After data augmentation there are 258 images for training. Additional data augmentation such as horizontal and vertical flips can be applied.
+Gaussian blur is applied on all 129 images using scipy python module. After data augmentation there are 258 images available for training. Additional data augmentation such as horizontal and vertical flips can be applied.
 To apply data augmentation run the below code. "./find_phone" is the directory where the images are stored.<br>
 ` $ python augment_data.py ./find_phone ` <br>
 
 ## Train
+To train the model on the dataset run the below code. <br>
+` $ python train_phone_finder.py ./find_phone` <br>
+
+I have trained the model for 200 epochs. Resulting accuracy is about ~81% . Training results are shown in the pictures below. model will be saved after training.<br>
+
+<img src="loss.PNG" height=300 width=450>
+<img src="acc.PNG" height=300 width=450>
+
+## Inference
+To test the model on your own image or test set run the below code. "./find_phone/12.jpg" is the path to the image whose phone co-ordinates are to be predicted.<br>
+`$ python phone_finder.py ./find_phone/12.jpg` <br>
+Output prints two values on the terminal. First value is the x co-ordinate value and second is y co-ordinate value.
