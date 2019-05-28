@@ -1,10 +1,10 @@
 
-#Import necessary modules
+# Import necessary modules
 from scipy import misc, ndimage
 import os
 import sys
 
-#Load images from the images dir
+# Load images from the images dir
 IMG_DIR = sys.argv[1]
 AUG_DIR = sys.argv[1]
 
