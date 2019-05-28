@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
+import sys
 import cv2
 
 # Importing NN modules
@@ -13,11 +14,11 @@ from keras.preprocessing.image import ImageDataGenerator
 import keras.backend as K
 
 # Directory where the images (including augmented) and labels exist 
-IMG_DIR = "./aug_pics"
+IMG_DIR = sys.argv[1]
 
 # Parse labels.txt to find image, convert it into array and assign
 # values to the training_data variable
-data = pd.read_csv("./aug_pics/aug_labels.txt", sep=" ", header=None)
+data = pd.read_csv(os.path.join(IMG_DIR, "labels.txt"), sep=" ", header=None)
 data_rows = data.shape[0]
 data_cols = data.shape[1]
 training_data = []
