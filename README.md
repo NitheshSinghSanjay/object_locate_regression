@@ -22,7 +22,7 @@ Below picture shows the architectural details of the CNN used to solve this prob
 # Training
 
 ## Data Augmentation
-Gaussian blur is applied on all 129 images using scipy python module. After data augmentation there are 258 images available for training. Additional data augmentation such as horizontal and vertical flips can be applied.
+Gaussian blur is applied on all 129 images using scipy python module. After data augmentation there are 258 images available for training. 10% of the images are used as validation set. 
 To apply data augmentation run the below code. "./find_phone" is the directory where the images are stored.<br>
 ` $ python augment_data.py ./find_phone ` <br>
 
@@ -41,4 +41,4 @@ To test the model on your own image or test set run the below code. "./find_phon
 Output prints two values on the terminal. First value is the x co-ordinate value and second is y co-ordinate value.
 
 ## Future Work
-More data augmentation can be implemented to produce more data for training.  Also, network can be made smaller by optimizing the convolution layers.
+Additional data augmentation such as horizontal and vertical flips can be implemented to produce more data for training.  Also, network can be made smaller by optimizing the convolution layers.
