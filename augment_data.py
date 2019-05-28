@@ -1,3 +1,4 @@
+# By, Nithesh Singh Sanjay | meontechno@gmail.com
 
 # Import necessary modules
 from scipy import misc, ndimage
