@@ -10,8 +10,12 @@ import cv2
 # Importing NN modules
 from keras.models import Model
 from keras.layers import Input, Conv2D, MaxPooling2D, BatchNormalization, Reshape, Flatten, ReLU, Dropout, Dense
-from keras.preprocessing.image import ImageDataGenerator 
+from keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.callbacks import TensorBoard 
 import keras.backend as K
+
+# Name for tensorboard logs
+NAME = "find_phone_train_CNN"
 
 # Directory where the images (including augmented) and labels exist 
 IMG_DIR = sys.argv[1]
@@ -95,8 +99,11 @@ model.compile(optimizer = "adam",
               loss = "mse",
               metrics = ["accuracy"])
 
+# Creating tensorboard callback
+tensorboard = TensorBoard(log_dir="logs/{}".format(NAME))
+
 #model.summary()
-model.fit(X, Y, batch_size=5, epochs=100, validation_split=0.1, shuffle=True)
+model.fit(X, Y, batch_size=5, epochs=200, validation_split=0.1, shuffle=True, callbacks=[tensorboard])
 
 # Save the model after training
 model.save("phone_detect.h5")
