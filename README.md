@@ -39,3 +39,6 @@ I have trained the model for 200 epochs. Resulting accuracy is about ~81% . Trai
 To test the model on your own image or test set run the below code. "./find_phone/12.jpg" is the path to the image whose phone co-ordinates are to be predicted.<br>
 `$ python phone_finder.py ./find_phone/12.jpg` <br>
 Output prints two values on the terminal. First value is the x co-ordinate value and second is y co-ordinate value.
+
+## Future Work
+More data augmentation can be implemented to produce more data for training.  Also, network can be made smaller by optimizing the convolution layers.
